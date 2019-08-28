@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/test-buki/static/css/main.d8c0cd6f.chunk.css",
+    "main.js": "/test-buki/static/js/main.dd7775d6.chunk.js",
+    "main.js.map": "/test-buki/static/js/main.dd7775d6.chunk.js.map",
+    "runtime~main.js": "/test-buki/static/js/runtime~main.ad850c60.js",
+    "runtime~main.js.map": "/test-buki/static/js/runtime~main.ad850c60.js.map",
+    "static/js/2.ed799983.chunk.js": "/test-buki/static/js/2.ed799983.chunk.js",
+    "static/js/2.ed799983.chunk.js.map": "/test-buki/static/js/2.ed799983.chunk.js.map",
+    "index.html": "/test-buki/index.html",
+    "precache-manifest.5d31663fa945d7417e1134269fcf96eb.js": "/test-buki/precache-manifest.5d31663fa945d7417e1134269fcf96eb.js",
+    "service-worker.js": "/test-buki/service-worker.js",
+    "static/css/main.d8c0cd6f.chunk.css.map": "/test-buki/static/css/main.d8c0cd6f.chunk.css.map"
+  }
+}
