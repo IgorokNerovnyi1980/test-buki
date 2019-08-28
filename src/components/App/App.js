@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import styles from "./App.module.css";
+import Header from "../Header/Header";
+import ChatWindow from "../ChatWindow/ChatWindow";
+import Footer from "../Footer/Footer";
 
 class App extends Component {
   render() {
     return (
-      <header className={styles.header}>
-        <h1>Component App</h1>
-      </header>
+      <>
+        <Header />
+        <ChatWindow />
+        <Footer />
+      </>
     );
   }
 }

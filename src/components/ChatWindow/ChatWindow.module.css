@@ -1,0 +1,13 @@
+.wrapper {
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+    background-color: white;
+
+}
+
+@media (min-width: 320px) and (max-width: 670px) {
+    .wrapper {
+        height: 70vh;
+    }
+}
