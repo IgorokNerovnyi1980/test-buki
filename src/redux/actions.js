@@ -11,4 +11,13 @@ export function getAllPostsSuccess(data) {
   };
 }
 
-fetchMessages();
+export function getAllPosts() {
+  return dispatch => {
+    fetchMessages('https://api.dev.buki.com.ua/frontend_test')
+      .then(res => res.data)
+      .then(data => {
+        dispatch(getAllPostsSuccess(data));
+      })
+      .catch(err => console.log(err));
+  };
+}

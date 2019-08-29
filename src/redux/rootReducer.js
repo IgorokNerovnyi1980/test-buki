@@ -1,7 +1,7 @@
-import { Type } from "./actions";
+import { Type } from './actions';
 
 const initialState = {
-  posts: null
+  posts: null,
 };
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
