@@ -1,14 +1,45 @@
 .wrapper {
-    width: 90%;
-    height: 70vh;
-    margin: 0 auto;
-    background-color: white;
-    overflow: auto;
+  width: 90%;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: white;
+  overflow: auto;
+}
 
+::-webkit-scrollbar-button {
+  /* background-image: url(''); */
+  background-repeat: no-repeat;
+  width: 0.4em;
+  height: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ecedee
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background-color: #8cc054;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e2e2e2;
+}
+
+::-webkit-resizer {
+  /* background-image: url(''); */
+  background-repeat: no-repeat;
+  width: 0.4em;
+  height: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0.4em;
 }
 
 @media (min-width: 320px) and (max-width: 670px) {
-    .wrapper {
-        height: 60vh;
-    }
+  .wrapper {
+    height: 60vh;
+  }
 }
