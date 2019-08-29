@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./Header.module.css";
+import React from 'react';
+import styles from './ChatHeader.module.css';
 
 const users = 5;
 const messages = 8;
-const date = "2019.18.01 13.02";
+const date = '2019.18.01 13.02';
 
 const Header = () => (
   <header className={styles.header}>

@@ -1,44 +1,42 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 .footer {
-    width: 90%;
-    height: 10vh;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
+  width: 90%;
+  height: 10vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .list {
-    width: 50%;
-    height: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 @media (min-width: 670px) and (max-width: 1175px) {
-    .list {
-        width: 80%;
-        font-size: 1.6rem;
-    }
+  .list {
+    width: 80%;
+    font-size: 1.6rem;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 670px) {
-    .footer {
-        height: 15vh;
-        font-size: 1.4rem;
-    }
+  .footer {
+    height: 15vh;
+    font-size: 1.4rem;
+  }
 
-    .list {
-        width: 100%;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        /* background-color: blue; */
-    }
+  .list {
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: blue; */
+  }
 }
