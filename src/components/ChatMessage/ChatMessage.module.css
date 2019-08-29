@@ -2,7 +2,7 @@
 .wrapper {
   position: relative;
   width: 60%;
-  min-height: 9vh;
+  min-height: 11vh;
   height: auto;
   background-color: #e2e2e2;
   margin-top: 0.5em;
@@ -23,12 +23,12 @@
 
 .img {
   position: absolute;
-  min-width: auto;
-  min-height: auto;
-  width: 10%;
+  width: 8%;
   max-width: 10em;
   height: auto;
-  top: 1vh;
+  min-width: auto;
+  min-height: auto;
+  top: 0.8vh;
   left: 2%;
 }
 

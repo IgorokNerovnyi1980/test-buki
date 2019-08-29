@@ -1,10 +1,14 @@
+import { fetchMessages } from '../services/getFetch';
+
 export const Type = {
-  FETCHALLPOSTS: "FETCHALLPOSTS"
+  FETCHALLPOSTS: 'FETCHALLPOSTS',
 };
 
 export function getAllPostsSuccess(data) {
   return {
     type: Type.FETCHALLPOSTS,
-    payload: data
+    payload: data,
   };
 }
+
+fetchMessages();

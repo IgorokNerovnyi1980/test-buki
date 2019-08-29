@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./ChatMessage.module.css";
+import React from 'react';
+import styles from './ChatMessage.module.css';
 
 // const user = {
 //   id: "9333000183101",
@@ -9,8 +9,8 @@ import styles from "./ChatMessage.module.css";
 //   message: "Hey, guys! Have you seen the new episode of 'Black Mirror'?"
 // };
 
-const ChatMessage = ({ obj, key }) => (
-  <div key={key} className={styles.wrapper}>
+const ChatMessage = ({ obj }) => (
+  <div className={styles.wrapper}>
     <img className={styles.img} src={obj.avatar} alt={obj.user} />
     <h2 className={styles.title}>{obj.user}</h2>
     <p className={styles.text}>{obj.message}</p>
