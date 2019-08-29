@@ -1,0 +1,56 @@
+.wrapper {
+    width: 90%;
+    height: 10vh;
+    margin: 0 auto;
+    background-color: #e2e2e2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input {
+    width: 80%;
+    height: 5vh;
+    border-radius: 0.3em;
+}
+
+.button {
+    width: 12%;
+    height: 7vh;
+    background-color: #8cc054;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    border-style: none;
+    border-radius: 0.3em;
+    transition: 0.5s;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #6cb321;
+    color: #4b4d4a;
+    transition: 0.5s;
+
+}
+
+
+@media (min-width: 500px) and (max-width: 800px) {
+    .input {
+        width: 70%;
+    }
+
+    .button {
+        width: 20%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+    .input {
+        width: 60%;
+    }
+
+    .button {
+        width: 30%;
+    }
+}

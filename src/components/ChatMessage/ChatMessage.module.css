@@ -1,0 +1,143 @@
+/* eslint-disable */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.wrapper {
+  position: relative;
+  width: 60%;
+  min-height: 9vh;
+  height: auto;
+  background-color: #e2e2e2;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 2%;
+  border-radius: 0.5em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.wrapperMyMessage {
+  composes: wrapper;
+  background-color: #4b4d4a;
+  margin-left: 38%;
+  margin-right: 2%;
+}
+
+.img {
+  position: absolute;
+  min-width: auto;
+  min-height: auto;
+  width: 10%;
+  max-width: 10em;
+  height: auto;
+  top: 1vh;
+  left: 2%;
+}
+
+.title {
+  position: absolute;
+  top: 1vh;
+  left: 13%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #8cc054;
+}
+
+.text {
+  position: absolute;
+  top: 4vh;
+  left: 13%;
+}
+
+.textMyMessage {
+  composes: text;
+  color: white;
+}
+
+.date {
+  position: absolute;
+  top: 1vh;
+  right: 2%;
+  color: #4b4d4a;
+  font-size: 0.7rem;
+}
+
+.dateMyMessage {
+  composes: date;
+  color: #e2e2e2;
+}
+
+.like {
+  position: absolute;
+  bottom: 1vh;
+  right: 2%;
+}
+
+@media (min-width:630px) and (max-width: 1100px) {
+  .wrapper {
+    width: 85%;
+  }
+
+  .wrapperMyMessage {
+    width: 85%;
+    margin-left: 13%;
+  }
+
+  .title {
+    top: 1vh;
+    left: 15%;
+    font-size: 1.2rem;
+  }
+
+  .text {
+    width: 80%;
+    top: 4vh;
+    left: 15%;
+  }
+}
+
+@media (min-width:450px) and (max-width: 630px) {
+  .wrapper {
+    width: 85%;
+  }
+
+  .wrapperMyMessage {
+    width: 85%;
+    margin-left: 13%;
+  }
+
+  .title {
+    top: 1vh;
+    left: 15%;
+    font-size: 1.2rem;
+  }
+
+  .text {
+    width: 80%;
+    top: 7vh;
+    left: 10%;
+  }
+}
+
+@media (min-width:320px) and (max-width: 450px) {
+  .wrapper {
+    width: 85%;
+  }
+
+  .wrapperMyMessage {
+    width: 85%;
+    margin-left: 13%;
+  }
+
+  .title {
+    top: 1vh;
+    left: 15%;
+    font-size: 1.2rem;
+  }
+
+  .text {
+    width: 80%;
+    top: 5vh;
+    left: 5%;
+  }
+}

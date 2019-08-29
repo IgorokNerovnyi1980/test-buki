@@ -1,13 +1,14 @@
 .wrapper {
     width: 90%;
-    height: 80vh;
+    height: 70vh;
     margin: 0 auto;
     background-color: white;
+    overflow: auto;
 
 }
 
 @media (min-width: 320px) and (max-width: 670px) {
     .wrapper {
-        height: 70vh;
+        height: 60vh;
     }
 }
