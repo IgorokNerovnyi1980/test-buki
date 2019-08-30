@@ -71,6 +71,36 @@
   right: 2%;
 }
 
+.delete {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  bottom: 1vh;
+  right: 2%;
+  text-align: center;
+  color: red;
+  border: .1em solid red;
+  border-radius: 0.1em;
+  transition: 0.5;
+  cursor: pointer;
+}
+
+.delete:active {
+  color: rgb(158, 88, 88);
+}
+
+.edit {
+  position: absolute;
+  bottom: 1vh;
+  right: 6%;
+  font-size: 1.2em;
+  color: #8cc054;
+}
+
+.edit:active {
+  color: #79945d;
+}
+
 @media (min-width:630px) and (max-width: 1100px) {
   .wrapper {
     width: 85%;
@@ -91,6 +121,10 @@
     width: 80%;
     top: 4vh;
     left: 15%;
+  }
+
+  .edit {
+    right: 7%;
   }
 }
 
@@ -115,6 +149,10 @@
     top: 7vh;
     left: 10%;
   }
+
+  .edit {
+    right: 9%;
+  }
 }
 
 @media (min-width:320px) and (max-width: 450px) {
@@ -137,5 +175,9 @@
     width: 80%;
     top: 5vh;
     left: 5%;
+  }
+
+  .edit {
+    right: 11%;
   }
 }

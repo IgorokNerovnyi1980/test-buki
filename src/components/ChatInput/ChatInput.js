@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import styles from './ChatInput.module.css';
 import shortid from 'shortid';
+import * as moment from 'moment';
+import { connect } from 'react-redux';
+import * as actions from '../../redux/actions';
+import * as selectors from '../../redux/selectors';
+import newMessage from '../../services/createNewMessage';
 
 class ChatInput extends Component {
   state = {
     message: '',
     created_at: '',
     id: '',
+    messageForStore: null,
   };
 
   handleChange = e => {
@@ -17,10 +23,14 @@ class ChatInput extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({ created_at: Date(), id: shortid.generate() }, () =>
-      console.log(this.state),
+    const { user, addNewMessage } = this.props;
+    this.setState(
+      { created_at: moment().format('LLLL'), id: shortid.generate() },
+      () => addNewMessage(newMessage(user, this.state)),
     );
   };
+  //
+
   render() {
     const { message } = this.state;
     return (
@@ -41,5 +51,28 @@ class ChatInput extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  allPosts: selectors.postsFromStore(state),
+  user: selectors.user(state),
+});
+const mapDispatchToProps = dispatch => ({
+  addNewMessage: message => dispatch(actions.addNewMessage(message)),
+});
 
-export default ChatInput;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ChatInput);
+
+// this.setState(
+//   { created_at: moment().format('LLLL'), id: shortid.generate() },
+//   () =>
+//     this.setState(
+//       state => ({
+//         ...state,
+//         messageForStore: newMessage(user, this.state),
+//       }),
+//       () => addNewMessage(allPosts, this.state.messageForStore),
+//     ),
+// );
+// };

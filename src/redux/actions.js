@@ -2,25 +2,18 @@ import { fetchMessages } from '../services/getFetch';
 
 export const Type = {
   FETCHALL_POSTS: 'FETCHALL_POSTS',
-  FETCH_QUANTITY_USERS: 'FETCH_QUANTITY_USERS',
-  FETCH_QUANTITY_MESSAGES: 'FETCH_QUANTITY_MESSAGES',
-  NAME_USER: 'NAME_USER',
-  MESSAGE_USER: 'MESSAGE_USER',
+  ADD_NEW_MESSAGE: 'ADD_NEW_MESSAGE',
 };
 
-// export function getQuantityUsers(data) {
-//   return {
-//     type: Type.FETCH_QUANTITY_USERS,
-//     payload: data,
-//   };
-// }
+export function addNewMessage(message) {
+  // console.log(message);
+  // arr.push(message);
 
-// function getQuantityMessages(arr) {
-//   return {
-//     type: Type.FETCH_QUANTITY_MESSAGES,
-//     payload: arr.length,
-//   };
-// }
+  return {
+    type: Type.ADD_NEW_MESSAGE,
+    payload: message,
+  };
+}
 
 function getAllPostsSuccess(data) {
   return {

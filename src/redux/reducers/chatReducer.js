@@ -2,24 +2,15 @@ import { Type } from '../actions';
 
 const initialState = {
   posts: null,
-  usersInChat: 0,
-  messagesInChat: 0,
-  userName: 'Taylor',
-  userMessage: null,
+  user: { user: 'Taylor', avatar: 'https://i.pravatar.cc/300?img=12' },
 };
 
 const chatReducer = (state = initialState, action) => {
   switch (action.type) {
     case Type.FETCHALL_POSTS:
       return { ...state, posts: action.payload };
-    case Type.FETCH_QUANTITY_USERS:
-      return { ...state, usersInChat: action.payload };
-    case Type.FETCH_QUANTITY_MESSAGES:
-      return { ...state, messagesInChat: action.payload };
-    case Type.NAME_USER:
-      return { ...state, userName: action.payload };
-    case Type.MESSAGE_USER:
-      return { ...state, userMessage: action.payload };
+    case Type.ADD_NEW_MESSAGE:
+      return { ...state, posts: [...state.posts, action.payload] };
     default:
       return state;
   }
