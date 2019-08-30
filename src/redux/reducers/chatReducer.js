@@ -5,6 +5,7 @@ const initialState = {
   usersInChat: 0,
   messagesInChat: 0,
   userName: 'Taylor',
+  userMessage: null,
 };
 
 const chatReducer = (state = initialState, action) => {
@@ -17,6 +18,8 @@ const chatReducer = (state = initialState, action) => {
       return { ...state, messagesInChat: action.payload };
     case Type.NAME_USER:
       return { ...state, userName: action.payload };
+    case Type.MESSAGE_USER:
+      return { ...state, userMessage: action.payload };
     default:
       return state;
   }

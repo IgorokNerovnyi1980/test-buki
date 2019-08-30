@@ -5,8 +5,13 @@ import * as actions from '../../redux/actions';
 import * as selectors from '../../redux/selectors';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import MyMessage from '../ChatMessage/MyMessage';
+import Loader from '../dummyPages/Loader';
 
 class ChatWindow extends Component {
+  state = {
+    isLoading: false,
+  };
+
   componentDidMount() {
     this.props.fetchPosts();
   }
@@ -14,14 +19,17 @@ class ChatWindow extends Component {
     const { allPosts, user } = this.props;
     return (
       <div className={styles.wrapper}>
-        {allPosts &&
+        {!allPosts ? (
+          <Loader />
+        ) : (
           allPosts.map(item =>
             item.user !== user ? (
               <ChatMessage obj={item} key={item.id} />
             ) : (
               <MyMessage obj={item} key={item.id} />
             ),
-          )}
+          )
+        )}
       </div>
     );
   }
