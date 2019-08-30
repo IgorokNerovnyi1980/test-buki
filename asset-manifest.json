@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/test-buki/static/css/main.198a5ee1.chunk.css",
-    "main.js": "/test-buki/static/js/main.4566d6d8.chunk.js",
-    "main.js.map": "/test-buki/static/js/main.4566d6d8.chunk.js.map",
+    "main.js": "/test-buki/static/js/main.955e4686.chunk.js",
+    "main.js.map": "/test-buki/static/js/main.955e4686.chunk.js.map",
     "runtime~main.js": "/test-buki/static/js/runtime~main.ad850c60.js",
     "runtime~main.js.map": "/test-buki/static/js/runtime~main.ad850c60.js.map",
-    "static/js/2.3405c0a7.chunk.js": "/test-buki/static/js/2.3405c0a7.chunk.js",
-    "static/js/2.3405c0a7.chunk.js.map": "/test-buki/static/js/2.3405c0a7.chunk.js.map",
+    "static/js/2.1adbcd8e.chunk.js": "/test-buki/static/js/2.1adbcd8e.chunk.js",
+    "static/js/2.1adbcd8e.chunk.js.map": "/test-buki/static/js/2.1adbcd8e.chunk.js.map",
     "index.html": "/test-buki/index.html",
-    "precache-manifest.ee43b80a840f17bf0c059b2ddf5a873a.js": "/test-buki/precache-manifest.ee43b80a840f17bf0c059b2ddf5a873a.js",
+    "precache-manifest.7713f2bc961bdc44fc03b7ac4a3785bb.js": "/test-buki/precache-manifest.7713f2bc961bdc44fc03b7ac4a3785bb.js",
     "service-worker.js": "/test-buki/service-worker.js",
     "static/css/main.198a5ee1.chunk.css.map": "/test-buki/static/css/main.198a5ee1.chunk.css.map"
   }
