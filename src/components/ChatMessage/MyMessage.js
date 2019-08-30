@@ -3,8 +3,8 @@ import styles from './ChatMessage.module.css';
 
 class MyMessage extends Component {
   onDeleteMessage = id => {
-    console.log('click delete');
     console.log(id);
+    alert('click');
   };
   render() {
     const { obj } = this.props;
@@ -15,11 +15,10 @@ class MyMessage extends Component {
         <p className={styles.textMyMessage}>{obj.message}</p>
         <p className={styles.dateMyMessage}>{obj.created_at}</p>
         <button
+          type="button"
           onClick={this.onDeleteMessage(obj.id)}
           className={styles.delete}
-        >
-          X
-        </button>
+        ></button>
         <p className={styles.edit}>Edit</p>
       </div>
     );
