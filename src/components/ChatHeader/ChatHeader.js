@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './ChatHeader.module.css';
+import { connect } from 'react-redux';
+import getDate from '../../services/getDateOfLastMessage';
+import getUsers from '../../services/getQuantityUsers';
+import getMessages from '../../services/getQuantityMessages';
+import * as selectors from '../../redux/selectors';
 
-const users = 5;
-const messages = 8;
-const date = '2019.18.01 13.02';
+class Header extends Component {
+  render() {
+    const { allPosts } = this.props;
+    let dateOfLastMessage = '2000.1.01 12:01';
+    let users = 0;
+    let messages = 0;
 
-const Header = () => (
-  <header className={styles.header}>
-    <h1 className={styles.title}>My Chat</h1>
-    <div className={styles.statistic}>
-      <p>{users} users</p>
-      <p>{messages} messages</p>
-    </div>
-    <div className={styles.date}>
-      <p>Last message: {date}</p>
-    </div>
-  </header>
-);
-export default Header;
+    if (allPosts !== null) {
+      messages = getMessages(allPosts);
+      users = getUsers(allPosts);
+      dateOfLastMessage = getDate(allPosts);
+    }
+    return (
+      <header className={styles.header}>
+        <h1 className={styles.title}>My Chat</h1>
+        <div className={styles.statistic}>
+          <p>{users} users</p>
+          <p>{messages} messages</p>
+        </div>
+        <div className={styles.date}>
+          <p>Last message: {dateOfLastMessage}</p>
+        </div>
+      </header>
+    );
+  }
+}
+const mapStateToProps = state => ({
+  allPosts: selectors.postsFromStore(state),
+  user: selectors.userName(state),
+});
+
+export default connect(
+  mapStateToProps,
+  null,
+)(Header);

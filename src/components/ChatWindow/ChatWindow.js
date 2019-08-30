@@ -6,19 +6,17 @@ import * as selectors from '../../redux/selectors';
 import ChatMessage from '../ChatMessage/ChatMessage';
 import MyMessage from '../ChatMessage/MyMessage';
 
-const myName = 'Taylor';
-
 class ChatWindow extends Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
   render() {
-    const { allPosts } = this.props;
+    const { allPosts, user } = this.props;
     return (
       <div className={styles.wrapper}>
         {allPosts &&
           allPosts.map(item =>
-            item.user !== myName ? (
+            item.user !== user ? (
               <ChatMessage obj={item} key={item.id} />
             ) : (
               <MyMessage obj={item} key={item.id} />
@@ -30,6 +28,7 @@ class ChatWindow extends Component {
 }
 const mapStateToProps = state => ({
   allPosts: selectors.postsFromStore(state),
+  user: selectors.userName(state),
 });
 const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(actions.getAllPosts()),

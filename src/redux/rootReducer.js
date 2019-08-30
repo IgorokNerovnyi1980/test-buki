@@ -1,14 +1,6 @@
-import { Type } from './actions';
+import { combineReducers } from 'redux';
+import chatReducer from '../redux/reducers/chatReducer';
 
-const initialState = {
-  posts: null,
-};
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case Type.FETCHALLPOSTS:
-      return { ...state, posts: action.payload };
-    default:
-      return state;
-  }
-};
-export default rootReducer;
+export default combineReducers({
+  chat: chatReducer,
+});
