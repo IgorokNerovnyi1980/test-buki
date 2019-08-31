@@ -28,12 +28,4 @@ export const remove = function(id, name, arrAllPosts) {
     } else result.push(item);
   }
   return result;
-
-  // const arr = arrAllPosts.find(item => item.id === id);
-  // let obj = arr[0];
-
-  // obj = { ...obj, like: obj.like.find(item => item.user !== name) };
-
-  // console.log(obj);
-  // return obj;
 };

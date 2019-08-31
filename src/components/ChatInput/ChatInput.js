@@ -3,6 +3,7 @@ import styles from './ChatInput.module.css';
 import shortid from 'shortid';
 import * as moment from 'moment';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as actions from '../../redux/actions';
 import * as selectors from '../../redux/selectors';
 import newMessage from '../../services/createNewMessage';
@@ -72,6 +73,15 @@ class ChatInput extends Component {
     );
   }
 }
+
+ChatInput.propTypes = {
+  allPosts: PropTypes.array,
+  messageForEdit: PropTypes.object,
+  user: PropTypes.object,
+  addNewMessage: PropTypes.func,
+  clearMessage: PropTypes.func,
+};
+
 const mapStateToProps = state => ({
   allPosts: selectors.postsFromStore(state),
   user: selectors.user(state),

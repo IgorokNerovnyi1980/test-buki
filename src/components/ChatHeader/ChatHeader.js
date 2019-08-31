@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './ChatHeader.module.css';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import getDate from '../../services/getDateOfLastMessage';
 import getUsers from '../../services/getQuantityUsers';
 import getMessages from '../../services/getQuantityMessages';
@@ -32,6 +33,12 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  allPosts: PropTypes.array,
+  user: PropTypes.string,
+};
+
 const mapStateToProps = state => ({
   allPosts: selectors.postsFromStore(state),
   user: selectors.userName(state),

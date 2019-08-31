@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './ChatMessage.module.css';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as actions from '../../redux/actions';
 import * as selectors from '../../redux/selectors';
 
@@ -48,6 +49,14 @@ class MyMessage extends Component {
     );
   }
 }
+
+MyMessage.propTypes = {
+  obj: PropTypes.object,
+  allPosts: PropTypes.array,
+  newArrForStore: PropTypes.func,
+  messageForEdit: PropTypes.func,
+};
+
 const mapStateToProps = state => ({
   allPosts: selectors.postsFromStore(state),
 });
