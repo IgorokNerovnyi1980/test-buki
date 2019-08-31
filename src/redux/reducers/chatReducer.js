@@ -8,7 +8,9 @@ const initialState = {
 
 const chatReducer = (state = initialState, action) => {
   switch (action.type) {
-    case Type.FETCHALL_POSTS:
+    case Type.FETCH_ALL_POSTS:
+      return { ...state, posts: action.payload };
+    case Type.FILTER_ALL_POSTS:
       return { ...state, posts: action.payload };
     case Type.ADD_NEW_MESSAGE:
       return { ...state, posts: [...state.posts, action.payload] };

@@ -1,12 +1,21 @@
 import { fetchMessages } from '../services/getFetch';
 
 export const Type = {
-  FETCHALL_POSTS: 'FETCHALL_POSTS',
+  FETCH_ALL_POSTS: 'FETCH_ALL_POSTS',
+  FILTER_ALL_POSTS: 'FILTER_ALL_POSTS',
   ADD_NEW_MESSAGE: 'ADD_NEW_MESSAGE',
   DELETE_MESSEGE: 'DELETE_MESSEGE',
   EDIT_MESSEGE: 'EDIT_MESSEGE',
   CLEAR_MESSEGE: 'CLEAR_MESSEGE',
 };
+
+export function filtredAllPosts(arr) {
+  return {
+    type: Type.FILTER_ALL_POSTS,
+    payload: arr,
+  };
+}
+
 export function clearMessage() {
   return {
     type: Type.CLEAR_MESSEGE,
@@ -37,7 +46,7 @@ export function addNewMessage(message) {
 
 function getAllPostsSuccess(data) {
   return {
-    type: Type.FETCHALL_POSTS,
+    type: Type.FETCH_ALL_POSTS,
     payload: data,
   };
 }

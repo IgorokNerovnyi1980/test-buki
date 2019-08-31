@@ -26,7 +26,9 @@ class ChatInput extends Component {
     const { user, addNewMessage } = this.props;
 
     this.setState({ message: '' });
+
     addNewMessage(newMessage(user, this.state));
+
     this.setState({
       created_at: moment().format('LLLL'),
       id: shortid.generate(),

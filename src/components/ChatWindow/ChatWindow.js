@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './ChatWindow.module.css';
+import ScrollableFeed from 'react-scrollable-feed';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import * as selectors from '../../redux/selectors';
@@ -11,6 +12,7 @@ class ChatWindow extends Component {
   state = {
     isLoading: false,
   };
+
   componentDidMount() {
     this.props.fetchPosts();
   }
@@ -18,17 +20,19 @@ class ChatWindow extends Component {
     const { allPosts, user } = this.props;
     return (
       <div className={styles.wrapper}>
-        {!allPosts ? (
-          <Loader />
-        ) : (
-          allPosts.map(item =>
-            item.user !== user ? (
-              <ChatMessage obj={item} key={item.id} />
-            ) : (
-              <MyMessage obj={item} key={item.id} />
-            ),
-          )
-        )}
+        <ScrollableFeed>
+          {!allPosts ? (
+            <Loader />
+          ) : (
+            allPosts.map(item =>
+              item.user !== user ? (
+                <ChatMessage obj={item} key={item.id} />
+              ) : (
+                <MyMessage obj={item} key={item.id} />
+              ),
+            )
+          )}
+        </ScrollableFeed>
       </div>
     );
   }

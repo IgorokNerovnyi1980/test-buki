@@ -69,7 +69,14 @@
   position: absolute;
   bottom: 1vh;
   right: 2%;
+
 }
+
+.likeName {
+  composes: like;
+  right: 7%;
+}
+
 
 .delete {
   position: absolute;
