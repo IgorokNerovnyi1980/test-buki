@@ -16,6 +16,8 @@ const chatReducer = (state = initialState, action) => {
       return { ...state, posts: action.payload };
     case Type.EDIT_MESSEGE:
       return { ...state, editMessage: action.payload };
+    case Type.CLEAR_MESSEGE:
+      return { ...state, editMessage: action.payload };
     default:
       return state;
   }

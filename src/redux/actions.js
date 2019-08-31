@@ -5,7 +5,14 @@ export const Type = {
   ADD_NEW_MESSAGE: 'ADD_NEW_MESSAGE',
   DELETE_MESSEGE: 'DELETE_MESSEGE',
   EDIT_MESSEGE: 'EDIT_MESSEGE',
+  CLEAR_MESSEGE: 'CLEAR_MESSEGE',
 };
+export function clearMessage() {
+  return {
+    type: Type.CLEAR_MESSEGE,
+    payload: null,
+  };
+}
 
 export function editMessage(message) {
   return {

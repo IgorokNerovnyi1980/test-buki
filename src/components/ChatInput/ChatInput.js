@@ -13,10 +13,7 @@ class ChatInput extends Component {
     created_at: '',
     id: '',
     messageForStore: null,
-    // messageForEdit: null,
   };
-
-  // this.prop.messageForEdit
 
   handleChange = e => {
     this.setState({
@@ -27,17 +24,24 @@ class ChatInput extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { user, addNewMessage } = this.props;
-    this.setState(
-      { created_at: moment().format('LLLL'), id: shortid.generate() },
-      () => addNewMessage(newMessage(user, this.state)),
-    );
+
+    this.setState({ message: '' });
+    addNewMessage(newMessage(user, this.state));
+    this.setState({
+      created_at: moment().format('LLLL'),
+      id: shortid.generate(),
+    });
   };
+
   componentDidUpdate() {
-    const { messageForEdit } = this.props;
+    const { messageForEdit, clearMessage } = this.props;
     const { message } = this.state;
 
     if (messageForEdit !== null && message.length === 0) {
-      this.setState(state => ({ ...state, message: messageForEdit.message }));
+      this.setState(
+        state => ({ ...state, message: messageForEdit.message }),
+        () => clearMessage(),
+      );
     }
     return;
   }
@@ -69,22 +73,10 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   addNewMessage: message => dispatch(actions.addNewMessage(message)),
+  clearMessage: () => dispatch(actions.clearMessage()),
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(ChatInput);
-
-// this.setState(
-//   { created_at: moment().format('LLLL'), id: shortid.generate() },
-//   () =>
-//     this.setState(
-//       state => ({
-//         ...state,
-//         messageForStore: newMessage(user, this.state),
-//       }),
-//       () => addNewMessage(allPosts, this.state.messageForStore),
-//     ),
-// );
-// };
