@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2dfc2bd490690af270d6dc6ef0252fe2",
+    "revision": "0918f82f38c33c577e81fb64282d09c0",
     "url": "/test-buki/index.html"
   },
   {
-    "revision": "458a1e68148045c8eaae",
+    "revision": "2eb6add8f2a28aa80d7f",
     "url": "/test-buki/static/css/main.2221a50f.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/test-buki/static/js/2.b8c73b74.chunk.js"
   },
   {
-    "revision": "458a1e68148045c8eaae",
-    "url": "/test-buki/static/js/main.8905f27c.chunk.js"
+    "revision": "2eb6add8f2a28aa80d7f",
+    "url": "/test-buki/static/js/main.56202c49.chunk.js"
   },
   {
     "revision": "3313f400b7c8683c7294",
