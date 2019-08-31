@@ -1,5 +1,8 @@
 const getQuantityMessages = function(arr) {
-  return arr.length;
+  if (arr !== undefined) {
+    return arr.length;
+  }
+  return;
 };
 
 export default getQuantityMessages;

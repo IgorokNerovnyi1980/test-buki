@@ -13,7 +13,10 @@ class ChatInput extends Component {
     created_at: '',
     id: '',
     messageForStore: null,
+    // messageForEdit: null,
   };
+
+  // this.prop.messageForEdit
 
   handleChange = e => {
     this.setState({
@@ -29,7 +32,15 @@ class ChatInput extends Component {
       () => addNewMessage(newMessage(user, this.state)),
     );
   };
-  //
+  componentDidUpdate() {
+    const { messageForEdit } = this.props;
+    const { message } = this.state;
+
+    if (messageForEdit !== null && message.length === 0) {
+      this.setState(state => ({ ...state, message: messageForEdit.message }));
+    }
+    return;
+  }
 
   render() {
     const { message } = this.state;
@@ -54,6 +65,7 @@ class ChatInput extends Component {
 const mapStateToProps = state => ({
   allPosts: selectors.postsFromStore(state),
   user: selectors.user(state),
+  messageForEdit: selectors.message(state),
 });
 const mapDispatchToProps = dispatch => ({
   addNewMessage: message => dispatch(actions.addNewMessage(message)),

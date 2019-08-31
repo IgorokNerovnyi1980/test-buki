@@ -73,14 +73,16 @@
 
 .delete {
   position: absolute;
-  width: 1em;
+  width: 1.5em;
   height: 1em;
   bottom: 1vh;
   right: 2%;
-  text-align: center;
-  color: red;
-  border: .1em solid red;
-  border-radius: 0.1em;
+  text-align: justify;
+  line-height: 30%;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgb(231, 55, 55);
+  border: none;
   transition: 0.5;
   cursor: pointer;
 }
@@ -92,8 +94,14 @@
 .edit {
   position: absolute;
   bottom: 1vh;
-  right: 6%;
-  font-size: 1.2em;
+  right: 7%;
+  width: 2em;
+  height: 1em;
+  text-align: justify;
+  line-height: 50%;
+  box-sizing: border-box;
+  border: none;
+  background: none;
   color: #8cc054;
 }
 

@@ -11,9 +11,12 @@ const unique = function(arr) {
 
 const getQuantityUsers = function(arr) {
   let usersNames = [];
-  arr.map(item => usersNames.push(item.user));
-  let result = unique(usersNames);
-  return result.length;
+  if (arr !== undefined) {
+    arr.map(item => usersNames.push(item.user));
+    let result = unique(usersNames);
+    return result.length;
+  }
+  return;
 };
 
 export default getQuantityUsers;

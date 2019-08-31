@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
 import styles from './ChatMessage.module.css';
+import { connect } from 'react-redux';
+import * as actions from '../../redux/actions';
+import * as selectors from '../../redux/selectors';
 
 class MyMessage extends Component {
-  onDeleteMessage = id => {
-    console.log(id);
-    alert('click');
+  onEditMessage = e => {
+    const { allPosts, newArrForStore, messageForEdit } = this.props;
+
+    const id = e.target.value;
+    const message = allPosts.filter(item => item.id === id);
+    messageForEdit(message[0]);
+    newArrForStore(allPosts.filter(item => item.id !== id));
+  };
+
+  onDeleteMessage = e => {
+    const { allPosts, newArrForStore } = this.props;
+    const id = e.target.value;
+    // eslint-disable-next-line
+    newArrForStore(allPosts.filter(item => item.id !== id));
   };
   render() {
     const { obj } = this.props;
@@ -15,14 +29,35 @@ class MyMessage extends Component {
         <p className={styles.textMyMessage}>{obj.message}</p>
         <p className={styles.dateMyMessage}>{obj.created_at}</p>
         <button
+          onClick={this.onDeleteMessage.bind()}
           type="button"
-          onClick={this.onDeleteMessage(obj.id)}
+          value={obj.id}
           className={styles.delete}
-        ></button>
-        <p className={styles.edit}>Edit</p>
+        >
+          x
+        </button>
+        <button
+          type="button"
+          value={obj.id}
+          className={styles.edit}
+          onClick={this.onEditMessage.bind()}
+        >
+          Edit
+        </button>
       </div>
     );
   }
 }
+const mapStateToProps = state => ({
+  allPosts: selectors.postsFromStore(state),
+});
 
-export default MyMessage;
+const mapDispatchToProps = dispatch => ({
+  newArrForStore: arr => dispatch(actions.newArrForStore(arr)),
+  messageForEdit: message => dispatch(actions.editMessage(message)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(MyMessage);

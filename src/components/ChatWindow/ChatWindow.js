@@ -11,7 +11,6 @@ class ChatWindow extends Component {
   state = {
     isLoading: false,
   };
-
   componentDidMount() {
     this.props.fetchPosts();
   }

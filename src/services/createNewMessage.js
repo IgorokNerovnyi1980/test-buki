@@ -5,7 +5,6 @@ const createNewMessage = function(objUser, obj) {
     created_at: obj.created_at,
     message: obj.message,
   };
-  console.log(message);
   return message;
 };
 export default createNewMessage;

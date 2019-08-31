@@ -3,12 +3,25 @@ import { fetchMessages } from '../services/getFetch';
 export const Type = {
   FETCHALL_POSTS: 'FETCHALL_POSTS',
   ADD_NEW_MESSAGE: 'ADD_NEW_MESSAGE',
+  DELETE_MESSEGE: 'DELETE_MESSEGE',
+  EDIT_MESSEGE: 'EDIT_MESSEGE',
 };
 
-export function addNewMessage(message) {
-  // console.log(message);
-  // arr.push(message);
+export function editMessage(message) {
+  return {
+    type: Type.EDIT_MESSEGE,
+    payload: message,
+  };
+}
 
+export function newArrForStore(arr) {
+  return {
+    type: Type.DELETE_MESSEGE,
+    payload: arr,
+  };
+}
+
+export function addNewMessage(message) {
   return {
     type: Type.ADD_NEW_MESSAGE,
     payload: message,
