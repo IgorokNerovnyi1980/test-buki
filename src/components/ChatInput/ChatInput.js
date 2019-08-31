@@ -10,9 +10,7 @@ import newMessage from '../../services/createNewMessage';
 class ChatInput extends Component {
   state = {
     message: '',
-    created_at: '',
-    id: '',
-    messageForStore: null,
+    quantityMessages: 0,
   };
 
   handleChange = e => {
@@ -24,15 +22,21 @@ class ChatInput extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { user, addNewMessage } = this.props;
+    const { message } = this.state;
+    const partOfMessage = {
+      created_at: moment().format('LLLL'),
+      id: shortid.generate(),
+      message: message,
+    };
 
     this.setState({ message: '' });
 
-    addNewMessage(newMessage(user, this.state));
+    addNewMessage(newMessage(user, partOfMessage));
 
-    this.setState({
-      created_at: moment().format('LLLL'),
-      id: shortid.generate(),
-    });
+    this.setState(state => ({
+      ...state,
+      quantityMessages: state.quantityMessages + 1,
+    }));
   };
 
   componentDidUpdate() {

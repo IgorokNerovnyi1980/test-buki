@@ -139,7 +139,7 @@
   }
 
   .edit {
-    right: 7%;
+    right: 8%;
   }
 }
 
@@ -166,6 +166,10 @@
   }
 
   .edit {
+    right: 10%;
+  }
+
+  .likeName {
     right: 9%;
   }
 }
@@ -181,7 +185,7 @@
   }
 
   .title {
-    top: 1vh;
+    top: 2vh;
     left: 15%;
     font-size: 1.2rem;
   }
@@ -193,6 +197,10 @@
   }
 
   .edit {
+    right: 12%;
+  }
+
+  .likeName {
     right: 11%;
   }
 }

@@ -5,14 +5,6 @@ import * as actions from '../../redux/actions';
 import * as selectors from '../../redux/selectors';
 import * as like from '../../services/logicForLike';
 
-// const user = {
-//   id: "9333000183101",
-//   user: "Kate",
-//   avatar: "https://i.pravatar.cc/300?img=5",
-//   created_at: "2019-08-17 23:30:11",
-//   message: "Hey, guys! Have you seen the new episode of 'Black Mirror'?"
-// };
-
 class ChatMessage extends Component {
   onHandleLike = e => {
     const { allPosts, user, newArrForStore } = this.props;
@@ -20,13 +12,12 @@ class ChatMessage extends Component {
     const id = e.target.value;
 
     if (checked) {
-      const result = like.add(id, user, allPosts);
-      newArrForStore(result);
+      newArrForStore(like.add(id, user, allPosts));
     } else {
-      const result = like.remove(id, user, allPosts);
-      newArrForStore(result);
+      newArrForStore(like.remove(id, user, allPosts));
     }
   };
+
   render() {
     const { obj } = this.props;
     return (
