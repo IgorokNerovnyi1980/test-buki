@@ -29,10 +29,23 @@ class ChatInput extends Component {
       id: shortid.generate(),
       message: message,
     };
-
     this.setState({ message: '' });
+    if (message.length === 0) {
+      alert('Сообщения без текста не добавляются');
+      this.setState(state => ({
+        ...state,
+        quantityMessages: state.quantityMessages + 1,
+      }));
+    } else {
+      addNewMessage(newMessage(user, partOfMessage));
 
-    addNewMessage(newMessage(user, partOfMessage));
+      this.setState(state => ({
+        ...state,
+        quantityMessages: state.quantityMessages + 1,
+      }));
+    }
+
+    // addNewMessage(newMessage(user, partOfMessage));
 
     this.setState(state => ({
       ...state,
@@ -45,6 +58,7 @@ class ChatInput extends Component {
     const { message } = this.state;
 
     if (messageForEdit !== null && message.length === 0) {
+      this.setState({ message: '' });
       this.setState(
         state => ({ ...state, message: messageForEdit.message }),
         () => clearMessage(),
