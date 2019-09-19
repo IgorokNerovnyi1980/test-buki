@@ -1,19 +1,9 @@
-/* eslint-disable */
-const unique = function(arr) {
-  let result = [];
-  for (let str of arr) {
-    if (!result.includes(str)) {
-      result.push(str);
-    }
-  }
-  return result;
-};
-
 const getQuantityUsers = function(arr) {
-  let usersNames = [];
   if (arr !== undefined) {
-    arr.map(item => usersNames.push(item.user));
-    let result = unique(usersNames);
+    const names = arr.map(item => item.user);
+    const result = names.filter(function(item, index) {
+      return names.indexOf(item) === index;
+    });
     return result.length;
   }
   return;

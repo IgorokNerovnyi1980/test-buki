@@ -45,8 +45,6 @@ class ChatInput extends Component {
       }));
     }
 
-    // addNewMessage(newMessage(user, partOfMessage));
-
     this.setState(state => ({
       ...state,
       quantityMessages: state.quantityMessages + 1,

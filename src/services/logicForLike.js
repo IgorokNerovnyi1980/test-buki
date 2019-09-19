@@ -1,31 +1,24 @@
-export const add = function(id, name, arrAllPosts) {
-  let result = [];
-
-  for (let i = 0; i < arrAllPosts.length; i += 1) {
-    let item = arrAllPosts[i];
+export const add = function(id, name, arr) {
+  const result = arr.map(item => {
     if (item.id === id) {
       if (item['like']) {
         item = { ...item, like: [...item.like, name] };
-
-        result.push(item);
-      } else {
-        item = { ...item, like: [name] };
-        result.push(item);
+        return item;
       }
-    } else result.push(item);
-  }
+      return (item = { ...item, like: [name] });
+    }
+    return item;
+  });
   return result;
 };
 
-export const remove = function(id, name, arrAllPosts) {
-  let result = [];
-
-  for (let i = 0; i < arrAllPosts.length; i += 1) {
-    let item = arrAllPosts[i];
+export const remove = function(id, name, arr) {
+  const result = arr.map(item => {
     if (item.id === id) {
-      item = { ...item, like: item.like.filter(item => item !== name) };
-      result.push(item);
-    } else result.push(item);
-  }
+      item.like = item.like.filter(item => item !== name);
+      return item;
+    }
+    return item;
+  });
   return result;
 };
