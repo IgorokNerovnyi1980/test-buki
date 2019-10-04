@@ -76,7 +76,7 @@ class ChatInput extends Component {
           value={message}
           onChange={this.handleChange}
           id=""
-          placeholder=" say Hallo"
+          placeholder=" write Hallo"
         />
         <button className={styles.button} type="submit" name="send">
           Send
